@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Hub Module</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <!-- Header -->
+    <header class="bg-blue-700 text-white shadow">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <h1 class="text-2xl font-bold">Meeting Hub Module</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="hover:text-gray-300">Home</a></li>
+                    <li><a href="#" class="hover:text-gray-300">Dashboard</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto mt-6 p-4 bg-white rounded shadow">
+        <h2 class="text-xl font-bold mb-4">Meeting Hub</h2>
+
+        <!-- Meeting Scheduler -->
+        <section class="mb-6">
+            <h3 class="text-lg font-semibold mb-2">Schedule a Meeting</h3>
+            <form action="#" method="POST" class="space-y-4">
+                <div>
+                    <label for="meeting-title" class="block text-sm font-medium text-gray-700">Meeting Title:</label>
+                    <input type="text" id="meeting-title" name="meeting-title" placeholder="Enter meeting title"
+                        class="mt-1 block w-full text-sm bg-gray-50 rounded border border-gray-300">
+                </div>
+
+                <div>
+                    <label for="date" class="block text-sm font-medium text-gray-700">Date:</label>
+                    <input type="date" id="date" name="date" class="mt-1 block w-full text-sm bg-gray-50 rounded border border-gray-300">
+                </div>
+
+                <div>
+                    <label for="time" class="block text-sm font-medium text-gray-700">Time:</label>
+                    <input type="time" id="time" name="time" class="mt-1 block w-full text-sm bg-gray-50 rounded border border-gray-300">
+                </div>
+
+                <button type="submit"
+                    class="bg-blue-700 text-white py-2 px-4 rounded hover:bg-blue-800">Schedule</button>
+            </form>
+        </section>
+
+        <!-- Meeting List -->
+        <section>
+            <h3 class="text-lg font-semibold mb-2">Upcoming Meetings</h3>
+            <ul class="space-y-4">
+                <li class="p-4 bg-gray-100 rounded shadow">
+                    <h4 class="font-semibold">Team Collaboration</h4>
+                    <p>Date: 2025-01-20</p>
+                    <p>Time: 10:00 AM</p>
+                    <button
+                        class="mt-2 bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600">Cancel</button>
+                </li>
+                <li class="p-4 bg-gray-100 rounded shadow">
+                    <h4 class="font-semibold">Project Update</h4>
+                    <p>Date: 2025-01-22</p>
+                    <p>Time: 2:00 PM</p>
+                    <button
+                        class="mt-2 bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600">Cancel</button>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-700 text-white py-4 mt-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 CvSU Alumni Verification System. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Control Module</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <!-- Header -->
+    <header class="bg-blue-700 text-white shadow">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <h1 class="text-2xl font-bold">Admin Control Module</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="hover:text-gray-300">Home</a></li>
+                    <li><a href="#" class="hover:text-gray-300">Dashboard</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto mt-6 p-4 bg-white rounded shadow">
+        <h2 class="text-xl font-bold mb-4">Administrative Controls</h2>
+
+        <!-- User Management -->
+        <section class="mb-6">
+            <h3 class="text-lg font-semibold mb-2">User Management</h3>
+            <table class="w-full border-collapse border border-gray-300 text-sm">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="border border-gray-300 p-2">User ID</th>
+                        <th class="border border-gray-300 p-2">Name</th>
+                        <th class="border border-gray-300 p-2">Role</th>
+                        <th class="border border-gray-300 p-2">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border border-gray-300 p-2">1</td>
+                        <td class="border border-gray-300 p-2">John Doe</td>
+                        <td class="border border-gray-300 p-2">Alumni</td>
+                        <td class="border border-gray-300 p-2">
+                            <button class="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="border border-gray-300 p-2">2</td>
+                        <td class="border border-gray-300 p-2">Jane Smith</td>
+                        <td class="border border-gray-300 p-2">Employer</td>
+                        <td class="border border-gray-300 p-2">
+                            <button class="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- System Logs -->
+        <section class="mb-6">
+            <h3 class="text-lg font-semibold mb-2">System Logs</h3>
+            <ul class="space-y-4">
+                <li class="p-4 bg-gray-100 rounded shadow">
+                    <p><strong>Time:</strong> 2025-01-17 10:00 AM</p>
+                    <p><strong>Action:</strong> User John Doe updated their profile.</p>
+                </li>
+                <li class="p-4 bg-gray-100 rounded shadow">
+                    <p><strong>Time:</strong> 2025-01-17 11:30 AM</p>
+                    <p><strong>Action:</strong> Admin deleted user Jane Smith.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- System Settings -->
+        <section>
+            <h3 class="text-lg font-semibold mb-2">System Settings</h3>
+            <form action="#" method="POST" class="space-y-4">
+                <div>
+                    <label for="setting-1" class="block text-sm font-medium text-gray-700">Setting 1:</label>
+                    <input type="text" id="setting-1" name="setting-1" placeholder="Enter value"
+                        class="mt-1 block w-full text-sm bg-gray-50 rounded border border-gray-300">
+                </div>
+
+                <div>
+                    <label for="setting-2" class="block text-sm font-medium text-gray-700">Setting 2:</label>
+                    <input type="text" id="setting-2" name="setting-2" placeholder="Enter value"
+                        class="mt-1 block w-full text-sm bg-gray-50 rounded border border-gray-300">
+                </div>
+
+                <button type="submit" class="bg-blue-700 text-white py-2 px-4 rounded hover:bg-blue-800">Save Settings</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-700 text-white py-4 mt-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 CvSU Alumni Verification System. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

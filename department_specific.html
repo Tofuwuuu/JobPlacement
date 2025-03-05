@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department-Specific Module</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <!-- Header -->
+    <header class="bg-blue-700 text-white shadow">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <h1 class="text-2xl font-bold">Department-Specific Module</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="hover:text-gray-300">Home</a></li>
+                    <li><a href="#" class="hover:text-gray-300">Dashboard</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto mt-6 p-4 bg-white rounded shadow">
+        <h2 class="text-xl font-bold mb-4">Department Data</h2>
+
+        <!-- Department Selection -->
+        <section class="mb-6">
+            <h3 class="text-lg font-semibold mb-2">Select a Department</h3>
+            <form action="#" method="POST" class="space-y-4">
+                <div>
+                    <label for="department" class="block text-sm font-medium text-gray-700">Department:</label>
+                    <select id="department" name="department" class="mt-1 block w-full text-sm bg-gray-50 rounded border border-gray-300">
+                        <option value="">-- Select Department --</option>
+                        <option value="cs">Computer Science</option>
+                        <option value="it">Information Technology</option>
+                        <option value="ba">Business Administration</option>
+                    </select>
+                </div>
+                <button type="submit" class="bg-blue-700 text-white py-2 px-4 rounded hover:bg-blue-800">View Data</button>
+            </form>
+        </section>
+
+        <!-- Department Data Display -->
+        <section>
+            <h3 class="text-lg font-semibold mb-2">Department Overview</h3>
+            <div class="p-4 bg-gray-100 rounded shadow">
+                <p><strong>Department:</strong> Computer Science</p>
+                <p><strong>Number of Students:</strong> 120</p>
+                <p><strong>Faculty Members:</strong> 10</p>
+                <p><strong>Recent Activities:</strong> Hackathon, Coding Bootcamp</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-700 text-white py-4 mt-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 CvSU Alumni Verification System. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
