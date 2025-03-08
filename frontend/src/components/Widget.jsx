@@ -1,22 +1,4 @@
-import { useState, useEffect } from "react";
-
-const Widget = ({ title, fetchUrl, icon }) => {
-    const [count, setCount] = useState(0);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(fetchUrl);
-                const data = await response.json();
-                setCount(data.length); // Adjust this based on actual API structure
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
-        };
-
-        fetchData();
-    }, [fetchUrl]);
-
+const Widget = ({ title, count, icon }) => {
     return (
         <div style={{
             background: "#fff",
