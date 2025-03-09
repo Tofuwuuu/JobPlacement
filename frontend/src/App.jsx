@@ -1,16 +1,16 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
-import AddJob from "./pages/AddJob";
+import Login from "./pages/Login";
 
-const App = () => {
-    return (
-        <Router>
-            <Routes>
-                <Route path="/" element={<Dashboard />} />
-                <Route path="/add-job" element={<AddJob />} />
-            </Routes>
-        </Router>
-    );
-};
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </Router>
+  );
+}
 
 export default App;

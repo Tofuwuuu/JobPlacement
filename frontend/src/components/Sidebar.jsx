@@ -1,15 +1,23 @@
+import { Drawer, List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import WorkIcon from "@mui/icons-material/Work";
 import { Link } from "react-router-dom";
 
 const Sidebar = () => {
-    return (
-        <aside style={{ width: "200px", height: "100vh", background: "#222", color: "#fff", padding: "20px" }}>
-            <ul>
-                <li><Link to="/dashboard" style={{ color: "#fff" }}>Dashboard</Link></li>
-                <li><Link to="/users" style={{ color: "#fff" }}>Users</Link></li>
-                <li><Link to="/jobs" style={{ color: "#fff" }}>Jobs</Link></li>
-            </ul>
-        </aside>
-    );
+  return (
+    <Drawer variant="permanent" sx={{ width: 240 }}>
+      <List>
+        <ListItem button component={Link} to="/dashboard">
+          <ListItemIcon><DashboardIcon /></ListItemIcon>
+          <ListItemText primary="Dashboard" />
+        </ListItem>
+        <ListItem button component={Link} to="/jobs">
+          <ListItemIcon><WorkIcon /></ListItemIcon>
+          <ListItemText primary="Job Listings" />
+        </ListItem>
+      </List>
+    </Drawer>
+  );
 };
 
 export default Sidebar;
