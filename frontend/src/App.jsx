@@ -1,13 +1,20 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import JobListings from "./pages/JobListings";
+import EmployerModule from "./pages/EmployerModule";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route element={<ProtectedRoute />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/jobs" element={<JobListings />} />
+          <Route path="/employer" element={<EmployerModule />} />
+        </Route>
       </Routes>
     </Router>
   );
