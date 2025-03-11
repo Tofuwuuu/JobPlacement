@@ -144,6 +144,16 @@ const JobListings = () => {
                 >
                   Delete
                 </Button>
+
+                {/* Apply Now Button */}
+                <Button 
+                  variant="contained" 
+                  color="success"
+                  onClick={() => navigate(`/apply-job`, { state: job })}
+                  sx={{ textTransform: "none", fontWeight: "bold" }}
+                >
+                  Apply Now
+                </Button>
               </Box>
             </CardContent>
           </Card>

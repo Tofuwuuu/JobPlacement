@@ -1,20 +1,27 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { login } from "../services/authService";
+import { register } from "../services/authService";
 import { Box, TextField, Button, Typography } from "@mui/material";
 
-const Login = () => {
+const Register = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
-  const handleLogin = (e) => {
+  const handleRegister = (e) => {
     e.preventDefault();
-    const result = login(email, password);
+    if (password !== confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    }
 
+    const result = register(email, password);
     if (result.success) {
-      navigate("/dashboard"); // Redirect after login
+      setSuccess("Registration successful! Redirecting to login...");
+      setTimeout(() => navigate("/login"), 2000);
     } else {
       setError(result.message);
     }
@@ -23,12 +30,13 @@ const Login = () => {
   return (
     <Box p={4} maxWidth="400px" mx="auto" textAlign="center">
       <Typography variant="h4" fontWeight="bold" mb={3} color="primary">
-        Employer Login
+        Employer Registration
       </Typography>
 
       {error && <Typography color="error">{error}</Typography>}
+      {success && <Typography color="green">{success}</Typography>}
 
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleRegister}>
         <TextField
           label="Email"
           type="email"
@@ -49,18 +57,26 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           sx={{ mb: 2 }}
         />
+        <TextField
+          label="Confirm Password"
+          type="password"
+          variant="outlined"
+          fullWidth
+          required
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+          sx={{ mb: 2 }}
+        />
         <Button type="submit" variant="contained" color="primary" fullWidth>
-          Login
+          Register
         </Button>
       </form>
 
-      {/* Register Link */}
       <Typography mt={2}>
-        Don't have an account?{" "}
-        <Button onClick={() => navigate("/register")}>Register</Button>
+        Already have an account? <Button onClick={() => navigate("/login")}>Login</Button>
       </Typography>
     </Box>
   );
 };
 
-export default Login;
+export default Register;

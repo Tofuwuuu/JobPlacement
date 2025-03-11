@@ -2,9 +2,19 @@ import { Drawer, List, ListItem, ListItemIcon, ListItemText } from "@mui/materia
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import WorkIcon from "@mui/icons-material/Work";
 import AddBoxIcon from "@mui/icons-material/AddBox";
-import { Link } from "react-router-dom";
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+import AssignmentIcon from "@mui/icons-material/Assignment";
+import { Link, useNavigate } from "react-router-dom";
+import { logout } from "../services/authService";
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
+
   return (
     <Drawer variant="permanent" sx={{ width: 240 }}>
       <List>
@@ -23,6 +33,14 @@ const Sidebar = () => {
         <ListItem button component={Link} to="/job-dashboard">
           <ListItemIcon><DashboardIcon /></ListItemIcon>
           <ListItemText primary="Job Dashboard" />
+        </ListItem>
+        <ListItem button component={Link} to="/manage-applications">
+          <ListItemIcon><AssignmentIcon /></ListItemIcon>
+          <ListItemText primary="Manage Applications" />
+        </ListItem>
+        <ListItem button onClick={handleLogout}>
+          <ListItemIcon><ExitToAppIcon /></ListItemIcon>
+          <ListItemText primary="Logout" />
         </ListItem>
       </List>
     </Drawer>

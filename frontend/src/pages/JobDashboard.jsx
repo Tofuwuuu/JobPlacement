@@ -1,15 +1,19 @@
 import { useState, useEffect } from "react";
 import { Box, Typography, Card, CardContent, Button, Grid, Paper } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { isAuthenticated } from "../services/authService";
 
 const JobDashboard = () => {
   const navigate = useNavigate();
   const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
+    if (!isAuthenticated()) {
+      navigate("/login"); // Redirect to login if not authenticated
+    }
     const storedJobs = JSON.parse(localStorage.getItem("jobs")) || [];
     setJobs(storedJobs);
-  }, []);
+  }, [navigate]);
 
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this job?")) {
