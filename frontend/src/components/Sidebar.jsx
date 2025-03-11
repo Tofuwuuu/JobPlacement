@@ -20,6 +20,10 @@ const Sidebar = () => {
           <ListItemIcon><AddBoxIcon /></ListItemIcon>
           <ListItemText primary="Post a Job" />
         </ListItem>
+        <ListItem button component={Link} to="/job-dashboard">
+          <ListItemIcon><DashboardIcon /></ListItemIcon>
+          <ListItemText primary="Job Dashboard" />
+        </ListItem>
       </List>
     </Drawer>
   );

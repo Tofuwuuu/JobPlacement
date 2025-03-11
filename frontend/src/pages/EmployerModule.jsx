@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Box, TextField, Button, Typography } from "@mui/material";
+import { Box, TextField, Button, Typography, MenuItem } from "@mui/material";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const EmployerModule = () => {
@@ -11,6 +11,7 @@ const EmployerModule = () => {
     location: "",
     salary: "",
     description: "",
+    jobType: "Full-time", // Default value
   });
 
   useEffect(() => {
@@ -55,6 +56,22 @@ const EmployerModule = () => {
         <TextField label="Location" name="location" value={job.location} onChange={handleChange} fullWidth required margin="normal" />
         <TextField label="Salary" name="salary" value={job.salary} onChange={handleChange} fullWidth required margin="normal" />
         <TextField label="Job Description" name="description" value={job.description} onChange={handleChange} fullWidth required margin="normal" multiline rows={4} />
+        
+        <TextField
+          select
+          label="Job Type"
+          name="jobType"
+          variant="outlined"
+          fullWidth
+          value={job.jobType}
+          onChange={handleChange}
+          margin="normal"
+        >
+          <MenuItem value="Full-time">Full-time</MenuItem>
+          <MenuItem value="Part-time">Part-time</MenuItem>
+          <MenuItem value="Remote">Remote</MenuItem>
+          <MenuItem value="Freelance">Freelance</MenuItem>
+        </TextField>
         
         <Button type="submit" variant="contained" color="primary" sx={{ mt: 2 }}>
           {job.id ? "Update Job" : "Add Job"}
